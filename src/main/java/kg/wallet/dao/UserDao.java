@@ -11,7 +11,7 @@ import static java.time.LocalDateTime.now;
 
 public class UserDao {
     public boolean addUser(User user) throws SQLException {
-        String SQL = "insert into users(name, password, create_date) values (?,?,?)";
+        String SQL = "insert into users(name, password, created_date) values (?,?,?)";
         try (Connection connection = DB.connect();
              PreparedStatement statement = connection.prepareStatement(SQL);) {
             statement.setString(1, user.getName());
